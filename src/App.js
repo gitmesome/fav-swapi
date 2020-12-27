@@ -1,7 +1,7 @@
 import logo from './new-replubic.svg';
 import './App.css';
 import React, {Component} from "react";
-import NextPerson from './components/NextPerson.js';
+import SearchPerson from './components/SearchPerson.js';
 
 class App extends Component {
   constructor() {
@@ -37,7 +37,7 @@ class App extends Component {
             Edit <code>src/App.js</code> AND save to reload now.
           </p>
           <p>
-            <NextPerson />
+            <SearchPerson />
           </p>
           <p>
             We got {this.state.character.name}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class NextPerson extends React.Component {
+export class SearchPerson extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,4 +18,4 @@ export class NextPerson extends React.Component {
   }
 }
 
-export default NextPerson;
+export default SearchPerson;
