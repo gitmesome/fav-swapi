@@ -1,6 +1,7 @@
 import logo from './new-replubic.svg';
 import './App.css';
 import React, {Component} from "react";
+import NextPerson from './components/NextPerson.js';
 
 class App extends Component {
   constructor() {
@@ -34,6 +35,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> AND save to reload now.
+          </p>
+          <p>
+            <NextPerson />
           </p>
           <p>
             We got {this.state.character.name}
