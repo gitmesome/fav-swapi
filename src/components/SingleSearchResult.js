@@ -13,10 +13,10 @@ function SingleSearchResult(props){
   };
 
   return (
-    <div class="col-sm-3">
-      <div class="card" style={cardStyle}>
-        <div class="card-body">
-          <h5 class="card-title" style={titleStyle}>{props.res.name}</h5>
+    <div className="col-sm-3">
+      <div className="card" style={cardStyle}>
+        <div className="card-body">
+          <h5 className="card-title" style={titleStyle}>{props.res.name}</h5>
           <ul style={bodyStyle}>
             <li>Height: {props.res.height} cm</li>
             <li>Eye Color: {props.res.eye_color}</li>

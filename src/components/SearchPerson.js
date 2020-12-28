@@ -20,7 +20,13 @@ export class SearchPerson extends React.Component {
     return (
       <div>
         <label>Search: </label>
-        <input type="text" name="search_string" placeholder="Enter A Character Name" onChange={this.handleChange}/>
+        <input
+          type="text"
+          name="search_string"
+          placeholder="Enter A Character Name"
+          onChange={this.handleChange}
+          onKeyPress={(e) => {if (e.keyCode === 13) {this.props.searchForPerson(this.state.search_string)}}}
+        />
         <button onClick= {()  => this.props.searchForPerson(this.state.search_string) }>Hit it Chewie!</button>
       </div>
     );

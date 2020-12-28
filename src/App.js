@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     let result;
     if ( this.state.character.length > 0 ) {
-      result = this.state.character.map((res) => ( <SingleSearchResult res={res} /> ))
+      result = this.state.character.map((res) => ( <SingleSearchResult key={res.url} res={res} /> ))
     }
     return (
       <div className="App">
@@ -70,7 +70,7 @@ class App extends Component {
         </div>
         <div>
           <br />
-          <div class="row">
+          <div className="row">
             {result}
           </div>
         </div>
