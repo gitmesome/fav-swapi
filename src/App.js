@@ -9,7 +9,9 @@ class App extends Component {
     this.state = {
       character: {}
     };
+
     this.handleChange = this.handleChange.bind(this);
+    this.searchForPerson = this.searchForPerson.bind(this);
   }
 
   componentDidMount(){
@@ -21,6 +23,21 @@ class App extends Component {
           })
         }
       )
+  }
+
+  searchForPerson(search_string){
+    if( search_string){
+      fetch("https://swapi.dev/api/people/?search=" + search_string)
+        .then(response =>  response.json())
+        .then(data => {
+            this.setState({
+              character: data
+            })
+          }
+        )
+    }else{
+      alert("Do or do not!  There is no trying with an empty string");
+    }
   }
   
   handleChange(event){
@@ -37,7 +54,7 @@ class App extends Component {
             Edit <code>src/App.js</code> AND save to reload now.
           </p>
           <p>
-            <SearchPerson />
+            <SearchPerson searchForPerson = { this.searchForPerson } />
           </p>
           <p>
             We got {this.state.character.name}
