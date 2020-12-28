@@ -2,6 +2,7 @@ import logo from './new-replubic.svg';
 import './App.css';
 import React, {Component} from "react";
 import SearchPerson from './components/SearchPerson.js';
+import SingleSearchResult from './components/SingleSearchResult.js';
 
 class App extends Component {
   constructor() {
@@ -53,13 +54,22 @@ class App extends Component {
   }
 
   render() {
+    let result;
+    if ( this.state.character.length > 0 ) {
+      result = this.state.character.map((res) => ( <SingleSearchResult res={res} /> ))
+    }
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <br/>
+          <p>Star Wars Charter Search Terminal</p>
         </header>
         <div>
           <SearchPerson searchForPerson = { this.searchForPerson } />
+        </div>
+        <div>
+          {result}
         </div>
       </div>
     );
