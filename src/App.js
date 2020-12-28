@@ -69,7 +69,10 @@ class App extends Component {
           <SearchPerson searchForPerson = { this.searchForPerson } />
         </div>
         <div>
-          {result}
+          <br />
+          <div class="row">
+            {result}
+          </div>
         </div>
       </div>
     );
