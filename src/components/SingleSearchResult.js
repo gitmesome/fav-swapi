@@ -12,6 +12,12 @@ function SingleSearchResult(props){
     textAlign: "left",
   };
 
+  let favoritesButton = <a href="/#" className="btn btn-primary" onClick={() => props.addToFavorites(props.res.url)} >Add to Favorite</a>
+  if ( !props.addToFavorites ){
+    favoritesButton = undefined;
+  }
+
+
   return (
     <div className="col-sm-3">
       <div className="card" style={cardStyle}>
@@ -22,6 +28,7 @@ function SingleSearchResult(props){
             <li>Eye Color: {props.res.eye_color}</li>
             <li>Birth Year: {props.res.birth_year}</li>
           </ul>
+          {favoritesButton}
         </div>
       </div>
     </div>
