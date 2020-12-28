@@ -29,10 +29,17 @@ class App extends Component {
     if( search_string){
       fetch("https://swapi.dev/api/people/?search=" + search_string)
         .then(response =>  response.json())
-        .then(data => {
-            this.setState({
-              character: data
-            })
+        .then((data) => {
+            if (data.count > 0){
+              this.setState({
+                character: data.results
+              });
+            }else{
+              alert("Negative, negative, it didn't go in. It just impacted on the surface!");
+            }
+          },
+          (error) => {
+            alert("Error on fetch");
           }
         )
     }else{
@@ -51,9 +58,9 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <p>
+        <div>
           <SearchPerson searchForPerson = { this.searchForPerson } />
-        </p>
+        </div>
       </div>
     );
   }
